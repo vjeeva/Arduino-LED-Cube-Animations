@@ -53,17 +53,79 @@ void loop() {
   //cornerCubeCycle();
   railgun();
   cornerCubeCycle(90);
+  risingX(20);
 }
 
 
-//Arrow
-
-void arrow_tip(){
-  
+//Rising X
+void risingX(int iterations){
+  allOff();
+  digitalWrite(column[0], 0);
+  digitalWrite(column[3], 0);
+  digitalWrite(column[5], 0);
+  digitalWrite(column[6], 0);
+  digitalWrite(column[9], 0);
+  digitalWrite(column[10], 0);
+  digitalWrite(column[12], 0);
+  digitalWrite(column[15], 0);
+  for (int i = 0; i < iterations; i++){
+    rx1();
+    rx2();
+    rx3();
+    rx4(); 
+  }
 }
 
-void arrow_end(){
-  
+void rx1(){
+  digitalWrite(layer[3],1);
+  delay(75);
+  digitalWrite(layer[3],0);
+  delay(75);
+}
+
+void rx2(){
+  digitalWrite(layer[3],1);
+  delay(75);
+  digitalWrite(layer[2],1);
+  delay(75);
+  digitalWrite(layer[2],0);
+  delay(75);
+  digitalWrite(layer[3],0);
+  delay(75);
+}
+
+void rx3(){
+  digitalWrite(layer[3],1);
+  delay(75);
+  digitalWrite(layer[2],1);
+  delay(75);
+  digitalWrite(layer[1],1);
+  delay(75);
+  digitalWrite(layer[1],0);
+  delay(75);
+  digitalWrite(layer[2],0);
+  delay(75);
+  digitalWrite(layer[3],0);
+  delay(75);
+}
+
+void rx4(){
+  digitalWrite(layer[3],1);
+  delay(75);
+  digitalWrite(layer[2],1);
+  delay(75);
+  digitalWrite(layer[1],1);
+  delay(75);
+  digitalWrite(layer[0],1);
+  delay(75);
+  digitalWrite(layer[0],0);
+  delay(75);
+  digitalWrite(layer[1],0);
+  delay(75);
+  digitalWrite(layer[2],0);
+  delay(75);
+  digitalWrite(layer[3],0);
+  delay(75);
 }
 
 //RailGun Mode
